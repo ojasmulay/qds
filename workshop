@@ -1,0 +1,260 @@
+{
+  "paragraphs": [
+    {
+      "text": "%sql\r\nselect to_date(o.order_date) as Order_Date, count(o.*) as Total_Orders \r\nfrom ojas_workshop.orders o \r\nwhere month(o.order_date) between ${Month1\u003d1,1(Jan)|2(Feb)|3(Mar)|4(Apr)|5(May)|6(Jun)|7(Jul)|8(Aug)|9(Sep)|10(Oct)|11(Nov)|12(Dec)} and ${Month2\u003d2,1(Jan)|2(Feb)|3(Mar)|4(Apr)|5(May)|6(Jun)|7(Jul)|8(Aug)|9(Sep)|10(Oct)|11(Nov)|12(Dec)} \r\nand year(o.order_date) \u003d ${Year\u003d2014,2013|2014} \r\ngroup by to_date(o.order_date) \r\norder by to_date(o.order_date)\r\n",
+      "user": "omulay@qubole.com",
+      "dateUpdated": "May 19, 2018 5:11:06 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "multiBarChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "Order_Date",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "Total_Orders",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "Order_Date",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "Total_Orders",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {
+          "Month1": {
+            "name": "Month1",
+            "defaultValue": "1",
+            "options": [
+              {
+                "value": "1",
+                "displayName": "Jan"
+              },
+              {
+                "value": "2",
+                "displayName": "Feb"
+              },
+              {
+                "value": "3",
+                "displayName": "Mar"
+              },
+              {
+                "value": "4",
+                "displayName": "Apr"
+              },
+              {
+                "value": "5",
+                "displayName": "May"
+              },
+              {
+                "value": "6",
+                "displayName": "Jun"
+              },
+              {
+                "value": "7",
+                "displayName": "Jul"
+              },
+              {
+                "value": "8",
+                "displayName": "Aug"
+              },
+              {
+                "value": "9",
+                "displayName": "Sep"
+              },
+              {
+                "value": "10",
+                "displayName": "Oct"
+              },
+              {
+                "value": "11",
+                "displayName": "Nov"
+              },
+              {
+                "value": "12",
+                "displayName": "Dec"
+              }
+            ],
+            "hidden": false
+          },
+          "Year": {
+            "name": "Year",
+            "defaultValue": "2014",
+            "options": [
+              {
+                "value": "2013"
+              },
+              {
+                "value": "2014"
+              }
+            ],
+            "hidden": false
+          },
+          "Month2": {
+            "name": "Month2",
+            "defaultValue": "2",
+            "options": [
+              {
+                "value": "1",
+                "displayName": "Jan"
+              },
+              {
+                "value": "2",
+                "displayName": "Feb"
+              },
+              {
+                "value": "3",
+                "displayName": "Mar"
+              },
+              {
+                "value": "4",
+                "displayName": "Apr"
+              },
+              {
+                "value": "5",
+                "displayName": "May"
+              },
+              {
+                "value": "6",
+                "displayName": "Jun"
+              },
+              {
+                "value": "7",
+                "displayName": "Jul"
+              },
+              {
+                "value": "8",
+                "displayName": "Aug"
+              },
+              {
+                "value": "9",
+                "displayName": "Sep"
+              },
+              {
+                "value": "10",
+                "displayName": "Oct"
+              },
+              {
+                "value": "11",
+                "displayName": "Nov"
+              },
+              {
+                "value": "12",
+                "displayName": "Dec"
+              }
+            ],
+            "hidden": false
+          }
+        }
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "JOB UI",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F172.31.14.6%3A8088%2Fproxy%2Fapplication_1526747183626_0001/jobs/job?spark\u003dtrue\u0026id\u003d1"
+          ],
+          "interpreterSettingId": "2DFT12GCA590901526687971532"
+        }
+      },
+      "paragraphProgress": {
+        "jobs": [
+          {
+            "id": 1,
+            "jobUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F172.31.14.6%3A8088%2Fproxy%2Fapplication_1526747183626_0001/jobs/job?spark\u003dtrue\u0026id\u003d1",
+            "numTasks": 201,
+            "numCompletedTasks": 201,
+            "stages": [
+              {
+                "id": 2,
+                "completed": true,
+                "stageUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F172.31.14.6%3A8088%2Fproxy%2Fapplication_1526747183626_0001/stages/stage/?id\u003d2\u0026attempt\u003d0",
+                "numCompleteTasks": 1,
+                "numActiveTasks": 0,
+                "numFailedTasks": 0,
+                "numTotalTasks": 1
+              },
+              {
+                "id": 3,
+                "completed": true,
+                "stageUrl": "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F172.31.14.6%3A8088%2Fproxy%2Fapplication_1526747183626_0001/stages/stage/?id\u003d3\u0026attempt\u003d0",
+                "numCompleteTasks": 200,
+                "numActiveTasks": 0,
+                "numFailedTasks": 0,
+                "numTotalTasks": 200
+              }
+            ],
+            "status": "Success"
+          }
+        ],
+        "numCompletedTasks": 201,
+        "numTasks": 201,
+        "truncated": false
+      },
+      "version": "v1",
+      "jobName": "paragraph_1526747186066_274895406",
+      "id": "20180519-162626_800493254_q_D76VZXDDZ11526746989",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "{\"exceeded\":-1,\"data\":[[\"Order_Date\",\"Total_Orders\"],[\"2014-01-01\",\"135\"],[\"2014-01-02\",\"111\"],[\"2014-01-03\",\"250\"],[\"2014-01-04\",\"129\"],[\"2014-01-05\",\"266\"],[\"2014-01-06\",\"155\"],[\"2014-01-07\",\"163\"],[\"2014-01-08\",\"122\"],[\"2014-01-09\",\"207\"],[\"2014-01-10\",\"241\"],[\"2014-01-11\",\"281\"],[\"2014-01-12\",\"215\"],[\"2014-01-13\",\"179\"],[\"2014-01-14\",\"209\"],[\"2014-01-15\",\"243\"],[\"2014-01-16\",\"194\"],[\"2014-01-17\",\"149\"],[\"2014-01-18\",\"139\"],[\"2014-01-19\",\"217\"],[\"2014-01-20\",\"203\"],[\"2014-01-21\",\"259\"],[\"2014-01-22\",\"209\"],[\"2014-01-23\",\"220\"],[\"2014-01-24\",\"159\"],[\"2014-01-25\",\"104\"],[\"2014-01-26\",\"154\"],[\"2014-01-27\",\"163\"],[\"2014-01-28\",\"197\"],[\"2014-01-29\",\"158\"],[\"2014-01-30\",\"254\"],[\"2014-01-31\",\"223\"],[\"2014-02-01\",\"278\"],[\"2014-02-02\",\"192\"],[\"2014-02-03\",\"197\"],[\"2014-02-04\",\"151\"],[\"2014-02-05\",\"137\"],[\"2014-02-06\",\"224\"],[\"2014-02-07\",\"228\"],[\"2014-02-08\",\"163\"],[\"2014-02-09\",\"240\"],[\"2014-02-10\",\"232\"],[\"2014-02-11\",\"205\"],[\"2014-02-12\",\"207\"],[\"2014-02-13\",\"203\"],[\"2014-02-14\",\"174\"],[\"2014-02-15\",\"221\"],[\"2014-02-16\",\"253\"],[\"2014-02-17\",\"184\"],[\"2014-02-18\",\"219\"],[\"2014-02-19\",\"268\"],[\"2014-02-20\",\"145\"],[\"2014-02-21\",\"200\"],[\"2014-02-22\",\"128\"],[\"2014-02-23\",\"175\"],[\"2014-02-24\",\"180\"],[\"2014-02-25\",\"259\"],[\"2014-02-26\",\"141\"],[\"2014-02-27\",\"193\"],[\"2014-02-28\",\"238\"]]}"
+      },
+      "dateCreated": "May 19, 2018 4:26:26 PM",
+      "dateStarted": "May 19, 2018 5:10:53 PM",
+      "dateFinished": "May 19, 2018 5:11:02 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "version": "v0",
+      "jobName": "paragraph_1526747471044_-1773909455",
+      "id": "20180519-163111_2135447443_q_D76VZXDDZ11526746989",
+      "dateCreated": "May 19, 2018 4:31:11 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "WS Dashboard Notebook",
+  "id": "D76VZXDDZ11526746989",
+  "angularObjects": {
+    "2DFT12GCA590901526687971532:shared_process": [],
+    "2DFD56JRM590901526681368331:shared_process": [],
+    "2DE8ZYZSR590901526681368304:shared_process": [],
+    "2DDVED323590901526681368308:shared_process": []
+  },
+  "config": {
+    "isDashboard": false
+  },
+  "info": {},
+  "source": "FCN"
+}
