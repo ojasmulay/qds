@@ -3,7 +3,7 @@
     {
       "text": "%sql\r\nselect to_date(o.order_date) as Order_Date, count(o.*) as Total_Orders \r\nfrom ojas_workshop.orders o \r\nwhere month(o.order_date) between ${Month1\u003d1,1(Jan)|2(Feb)|3(Mar)|4(Apr)|5(May)|6(Jun)|7(Jul)|8(Aug)|9(Sep)|10(Oct)|11(Nov)|12(Dec)} and ${Month2\u003d2,1(Jan)|2(Feb)|3(Mar)|4(Apr)|5(May)|6(Jun)|7(Jul)|8(Aug)|9(Sep)|10(Oct)|11(Nov)|12(Dec)} \r\nand year(o.order_date) \u003d ${Year\u003d2014,2013|2014} \r\ngroup by to_date(o.order_date) \r\norder by to_date(o.order_date)\r\n",
       "user": "omulay@qubole.com",
-      "dateUpdated": "May 19, 2018 5:11:06 PM",
+      "dateUpdated": "May 19, 2018 5:50:42 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -39,10 +39,15 @@
           }
         },
         "enabled": true,
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/sql",
+        "editorHide": false
       },
       "settings": {
-        "params": {},
+        "params": {
+          "Month1": "1",
+          "Year": "2014",
+          "Month2": "2"
+        },
         "forms": {
           "Month1": {
             "name": "Month1",
@@ -167,18 +172,6 @@
             ],
             "hidden": false
           }
-        }
-      },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "JOB UI",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "https://api.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F172.31.14.6%3A8088%2Fproxy%2Fapplication_1526747183626_0001/jobs/job?spark\u003dtrue\u0026id\u003d1"
-          ],
-          "interpreterSettingId": "2DFT12GCA590901526687971532"
         }
       },
       "paragraphProgress": {
